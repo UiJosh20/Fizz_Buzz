@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FizzBuzz</title>
+</head>
+<style>
+  body{
+    margin: 0;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 40px;
+  }
+  main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+    background-image: linear-gradient(rgba(49, 49, 49, 0.4), rgba(20, 20, 20,0.3)), url(images/giphy.gif);
+    background-size: cover;
+
+  }
+  section{
+    background-color: transparent;
+    border: 2px solid rgba(228, 228, 228, 0.5);
+    padding: 50px;
+    border-radius: 30px;
+  }
+  input{
+    padding: 14px;
+    width: 300px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid rgb(197, 197, 197);
+    border-radius: 40px;
+    outline: none;
+    text-align: center;
+    background-color: whitesmoke;
+
+  }
+  button{
+    padding: 14px;
+    width: 150px;
+    background-color: rgb(3, 105, 173);
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    border-radius: 40px;
+
+  }
+  div{
+    padding: 20px;
+    background-color: transparent;
+    margin-top: 30px;
+    height: 100px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-size: 30px;
+    opacity: 0.9;
+  }
+</style>
+<body>
+  <main>
+    <section>
+      <h1>FIZZBUZZ TEST</h1>
+      <input type="number" id="numberInp" placeholder="Enter a number" autofocus>
+      <button onclick="check()">Check</button>
+      <div id="display"></div>
+    </section>
+  </main>
+
+  <script>
+    function check(){
+      var checkNum = numberInp.value;
+      if (checkNum == "") {
+        display.innerHTML = "Please enter a number!"
+        display.style.backgroundColor = "grey";
+      }
+      else if (checkNum%3 == 0 && checkNum%5 == 0)
+      {
+        display.innerHTML = "FizzBuzz";
+        display.style.backgroundColor = "black";
+      } else if(checkNum%3 == 0){
+        display.innerHTML = "Fizz";
+        display.style.backgroundColor = "green";
+      } else if (checkNum%5 == 0){
+        display.innerHTML = "Buzz"
+        display.style.backgroundColor = "teal";
+      }else{
+        display.innerHTML = checkNum + " is just a normal number"
+        display.style.backgroundColor = "red";
+      }
+    }
+  </script>
+</body>
+</html>
