@@ -81,21 +81,34 @@
   <script>
     function check(){
       var checkNum = numberInp.value;
+      var pass = "./sounds/game.wav"
+      var fail = "./sounds/bonus.wav"
+
       if (checkNum == "") {
+        var songOn = new Audio(fail);
+        songOn.play();
         display.innerHTML = "Please enter a number!"
         display.style.backgroundColor = "grey";
       }
       else if (checkNum%3 == 0 && checkNum%5 == 0)
       {
+        var songOn = new Audio(pass);
+        songOn.play();
         display.innerHTML = "FizzBuzz";
         display.style.backgroundColor = "black";
       } else if(checkNum%3 == 0){
+        var songOn = new Audio(pass);
+        songOn.play();
         display.innerHTML = "Fizz";
         display.style.backgroundColor = "green";
       } else if (checkNum%5 == 0){
+        var songOn = new Audio(pass);
+        songOn.play();
         display.innerHTML = "Buzz"
         display.style.backgroundColor = "teal";
       }else{
+        var songOn = new Audio(fail);
+        songOn.play();
         display.innerHTML = checkNum + " is just a normal number"
         display.style.backgroundColor = "red";
       }
